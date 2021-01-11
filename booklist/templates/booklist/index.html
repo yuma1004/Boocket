@@ -13,7 +13,7 @@
     <!-- semantic.css  -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
     <!-- base.scss -->
-    <link rel="stylesheet" href="{% sass_src 'scss/accounts/base.scss' %}">
+    {% comment %} <link rel="stylesheet" href="{% sass_src 'scss/accounts/base.scss' %}"> {% endcomment %}
     <!-- jQuery  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -37,7 +37,7 @@
                 <a class="item">Careers</a>
                 <div class="right item">
                   <a class="ui inverted button" href="{% url 'login' %}">Log in</a>
-                  <a class="ui inverted button" href="{% url 'accounts:signup' %}">Sign Up</a>
+                  {% comment %} <a class="ui inverted button" href="{% url 'accounts:signup' %}">Sign Up</a> {% endcomment %}
                 </div>
               </div>
             </div>
@@ -106,5 +106,5 @@
     </main>
   </body>
   <!-- base.js -->
-    <script type="text/javascript" src="{% static 'js/accounts/base.js' %}"></script>
+    {% comment %} <script type="text/javascript" src="{% static 'js/accounts/base.js' %}"></script> {% endcomment %}
 </html>

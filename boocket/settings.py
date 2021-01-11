@@ -1,7 +1,5 @@
 import os
 
-import django_heroku
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -23,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
-    'accounts.apps.AccountsConfig',
+    # 'accounts.apps.AccountsConfig',
     'booklist.apps.BooklistConfig',
 ]
 
