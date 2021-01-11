@@ -37,12 +37,12 @@
       {% if request.user.is_authenticated %}
       <a class="item" href="{% url 'booklist:home' %}">Boocket</a>
       <div class="right menu">
-        {% comment %} <a class="item" href="{% url 'accounts:users_detail' request.user.pk %}">{{ request.user.username }}</a> {% endcomment %}
+        <a class="item" href="{% url 'accounts:users_detail' request.user.pk %}">{{ request.user.username }}</a>
 
         <a class="item" href="{% url 'logout' %}">logout</a>
         {% else %}
           <a href="{% url 'login' %}">login</a>
-          {% comment %} <a href="{% url 'accounts:signup' %}">signup</a> {% endcomment %}
+          <a href="{% url 'accounts:signup' %}">signup</a>
         {% endif %}
       </div>
     </div>

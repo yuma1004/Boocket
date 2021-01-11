@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sass_processor',
-    # 'accounts.apps.AccountsConfig',
+    'accounts.apps.AccountsConfig',
     'booklist.apps.BooklistConfig',
 ]
 
