@@ -1,0 +1,110 @@
+{% load static %}
+{% load sass_tags %}
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Boocket</title>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- semantic.css  -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <!-- base.scss -->
+    <link rel="stylesheet" href="{% sass_src 'scss/accounts/base.scss' %}">
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- semantic.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+
+    {% block style %}
+    {% endblock %}
+
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+          <div class="ui inverted vertical masthead center aligned segment">
+            <div class="ui container">
+              <div class="ui large secondary inverted pointing menu">
+                <a class="active item">Home</a>
+                <a class="item">Work</a>
+                <a class="item">Company</a>
+                <a class="item">Careers</a>
+                <div class="right item">
+                  <a class="ui inverted button" href="{% url 'login' %}">Log in</a>
+                  <a class="ui inverted button" href="{% url 'accounts:signup' %}">Sign Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="section-header">
+        <div class="ui text container taitle_position">
+          <h1 class="ui inverted h1_font">
+            Boocket
+          </h1>
+          <h2>世界一シンプルなブックリスト管理ツール</h2>
+          <div>
+            <a class="ui huge primary button" href="{% url 'booklist:home' %}">Get Started<i class="right arrow icon"></i></a> 
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="ui vertical stripe segment">
+        <div class="ui middle aligned stackable grid container">
+          <div class="row">
+            <div class="eight wide column">
+              <h3 class="ui header">input here</h3>
+              <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
+              <h3 class="ui header">input here</h3>
+              <p>Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.</p>
+            </div>
+            <div class="six wide right floated column">
+              <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+          <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+              <h4 class="ui inverted header">About</h4>
+              <div class="ui inverted link list">
+                <a href="#" class="item">Sitemap</a>
+                <a href="#" class="item">Contact Us</a>
+                <a href="#" class="item">Religious Ceremonies</a>
+                <a href="#" class="item">Gazebo Plans</a>
+              </div>
+            </div>
+            <div class="three wide column">
+              <h4 class="ui inverted header">Services</h4>
+              <div class="ui inverted link list">
+                <a href="#" class="item">Banana Pre-Order</a>
+                <a href="#" class="item">DNA FAQ</a>
+                <a href="#" class="item">How To Access</a>
+                <a href="#" class="item">Favorite X-Men</a>
+              </div>
+            </div>
+            <div class="seven wide column">
+              <h4 class="ui inverted header">Footer Header</h4>
+              <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!-- base.js -->
+    <script type="text/javascript" src="{% static 'js/accounts/base.js' %}"></script>
+</html>

@@ -1,0 +1,93 @@
+{% load static %}
+{% load sass_tags %}
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Boocket</title>
+
+    <!-- semantic.css  -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+    <!-- base.scss -->
+    <link rel="stylesheet" href="{% sass_src 'scss/booklist/base.scss' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
+    {% block style %}
+    {% endblock %}
+    <!-- jQuery  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.widgets.min.js"></script>
+
+    <!-- semantic.js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+
+
+  </head>
+  <body>
+  <div>
+    <div class="ui secondary menu height-5">
+      {% if request.user.is_authenticated %}
+      <a class="item" href="{% url 'booklist:home' %}">Boocket</a>
+      <div class="right menu">
+        <a class="item" href="{% url 'accounts:users_detail' request.user.pk %}">{{ request.user.username }}</a>
+
+        <a class="item" href="{% url 'logout' %}">logout</a>
+        {% else %}
+          <a href="{% url 'login' %}">login</a>
+          <a href="{% url 'accounts:signup' %}">signup</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="ui grid height-95">
+      <div class="row height-15">
+        <div class="one wide column">
+          <img>
+        </div>
+        <div class="fourteen wide column">
+          <header>
+
+              {% block header %}
+              {% endblock %}
+
+              {% block menu %}
+              {% endblock %}
+
+          </header>
+        </div>
+        <div class="one wide column">
+          <img>
+        </div>
+      </div>
+      <div class="row height-80">
+        <div class="one wide column">
+          <img>
+        </div>
+        <div class="fourteen wide column main-wrapper">
+          <main>
+            {% block content %}
+            {% endblock %}
+          </main>
+        </div>
+        <div class="one wide column">
+          <img>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  </body>
+
+  <!-- base.js -->
+    <script type="text/javascript" src="{% static 'js/booklist/base.js' %}"></script>
+</html>

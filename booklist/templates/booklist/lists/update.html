@@ -1,0 +1,31 @@
+{% extends "booklist/base.html" %}
+{% load static %}
+{% load sass_tags %}
+
+{% block style %}
+    <!-- form.scss -->
+    <link rel="stylesheet" href="{% sass_src 'scss/booklist/form.scss' %}">
+{% endblock %}
+
+{% block header %}
+  <div class="header_title">
+    <h1>リスト編集</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  <div class="list_table">
+      <table class="ui small celled table">
+        <tbody>
+          <tr class="ui-state-default">
+            <td>{{ form.title }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="submit" class="ui primary button">登録</button>
+    <a class="ui button" href="{% url 'booklist:home' %}" role="button">戻る</a>
+  {% csrf_token %}
+</form>
+{% endblock %}

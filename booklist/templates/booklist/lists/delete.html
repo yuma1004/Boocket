@@ -1,0 +1,23 @@
+{% extends "booklist/base.html" %}
+{% load static %}
+{% load sass_tags %}
+
+{% block style %}
+    <!-- form.scss -->
+    <link rel="stylesheet" href="{% sass_src 'scss/booklist/form.scss' %}">
+{% endblock %}
+
+{% block header %}
+  <div class="header_title">
+    <h1>リスト削除</h1>
+  </div>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <p>リスト "{{ list.title }}" を本当に削除してもよろしいですか？</p>
+  <button type="submit" class="ui red button">確認</button>
+  <a class="ui button" href="{% url 'booklist:home' %}" role="button">戻る</a>
+</form>
+{% endblock %}
