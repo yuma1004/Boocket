@@ -50,21 +50,16 @@
             <td class="wid-20">{{ card.motive }}</td>
             <td class="wid-15">
               <div><p class="td_text">{{ card.issuance_years }}</p></div>
-              <div class="ui mini buttons card-icon-btn hidden">
-                <div class="ui floating dropdown icon button">
-                  <i class="ellipsis horizontal icon"></i>
-                  <div class="menu">
-                    <a class="item" href="{% url 'booklist:cards_update_from_home' card.pk list.pk %}"><i class="edit outline icon"></i>書籍を編集</a>
-                    <a class="item" href="{% url 'booklist:cards_delete' card.pk %}"><i class="trash alternate outline icon"></i>書籍を削除</a>
-                  </div>
-                </div>
+              <div class="menu">
+                <a class="item" href="{% url 'booklist:cards_update_from_home' card.pk list.pk %}"><i class="edit outline icon"></i></a>
+                <a class="item" href="{% url 'booklist:cards_delete' card.pk %}"><i class="trash alternate outline icon"></i></a>
               </div>
             </td>
           </tr>
         {% endfor %}
         </tbody>
       </table>
-      <a class="card-create hidden" href="{% url 'booklist:cards_create_from_home' list.pk %}" class="text-dark"><i class="plus square outline icon"></i> さらに書籍を追加</a>
+      <a class="card-create hidden text-dark" href="{% url 'booklist:cards_create_from_home' list.pk %}"><i class="plus square outline icon"></i>さらに書籍を追加</a>
     </div>
   {% endfor %}
 
